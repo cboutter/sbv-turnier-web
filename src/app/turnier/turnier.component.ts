@@ -16,7 +16,7 @@ export class TurnierComponent implements OnInit {
   }
 
   getTurniere(): void {
-    this.turniere = this.turnierService.getTurniere();
+    this.turnierService.getTurniere().subscribe(t => this.turniere = t);
   }
 
   onSelect(turnier: Turnier): void {

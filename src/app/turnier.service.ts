@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 
+import {Observable} from 'rxjs/Observable';
+import {of} from 'rxjs/observable/of';
+
 import {Turnier} from './turnier/turnier';
 import {TURNIERE} from './mock-turniere';
 
@@ -9,8 +12,8 @@ export class TurnierService {
   constructor() {
   }
 
-  getTurniere(): Turnier[] {
-    return TURNIERE;
+  getTurniere(): Observable<Turnier[]> {
+    return of(TURNIERE);
   }
 
 }
