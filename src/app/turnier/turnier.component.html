@@ -1,7 +1,14 @@
-<h2>{{ turnier.name | uppercase }} Details</h2>
+<h2>Letzte Turniere</h2>
+<ul class="turniere">
+  <li *ngFor="let turnier of turniere" (click)="onSelect(turnier)">
+    <span class="badge">{{turnier.id}}</span> {{turnier.name}}
+  </li>
+</ul>
+<h2>{{ selectedTurnier.name | uppercase }} Details</h2>
+<div><span>id: </span>{{selectedTurnier.id}}</div>
 <div>
   <label>name:
-    <input [(ngModel)]="turnier.name" placeholder="name">
+    <input [(ngModel)]="selectedTurnier.name" placeholder="name">
   </label>
 </div>
 

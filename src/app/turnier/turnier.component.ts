@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Turnier} from './turnier';
+import {TURNIERE} from '../mock-turniere';
 
 @Component({
   selector: 'app-turnier',
@@ -8,9 +9,14 @@ import {Turnier} from './turnier';
 })
 export class TurnierComponent implements OnInit {
 
-  turnier: Turnier = {id: 1, name: 'SM 2017'};
+  turniere = TURNIERE;
+  selectedTurnier: Turnier;
 
   constructor() {
+  }
+
+  onSelect(turnier: Turnier): void {
+    this.selectedTurnier = turnier;
   }
 
   ngOnInit() {
