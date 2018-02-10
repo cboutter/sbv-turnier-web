@@ -9,6 +9,7 @@ import {TurnierDetailComponent} from './turnier-detail/turnier-detail.component'
 import {TurnierService} from './turnier.service';
 import {MessagesComponent} from './messages/messages.component';
 import {MessageService} from './message.service';
+import {AppRoutingModule} from './/app-routing.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {MessageService} from './message.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [TurnierService, MessageService],
   bootstrap: [AppComponent]
