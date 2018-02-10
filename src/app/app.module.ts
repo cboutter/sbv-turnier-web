@@ -7,19 +7,22 @@ import { AppComponent } from './app.component';
 import {TurnierComponent} from './turnier/turnier.component';
 import {TurnierDetailComponent} from './turnier-detail/turnier-detail.component';
 import {TurnierService} from './turnier.service';
+import {MessagesComponent} from './messages/messages.component';
+import {MessageService} from './message.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TurnierComponent,
-    TurnierDetailComponent
+    TurnierDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [TurnierService],
+  providers: [TurnierService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
