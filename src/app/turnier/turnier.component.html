@@ -1,10 +1,10 @@
 <h2>Letzte Turniere</h2>
 <ul class="turniere">
-  <li *ngFor="let turnier of turniere"
-      [class.selected]="turnier === selectedTurnier"
-      (click)="onSelect(turnier)">
-    <span class="badge">{{turnier.id}}</span> {{turnier.name}}
+  <li *ngFor="let turnier of turniere">
+    <a routerLink="/turnier/{{turnier.id}}">
+      <span class="badge">{{turnier.id}}</span> {{turnier.name}}
+    </a>
   </li>
 </ul>
-<app-turnier-detail [turnier]="selectedTurnier"></app-turnier-detail>
+
 

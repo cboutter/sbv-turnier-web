@@ -1,6 +1,6 @@
 <h3>Letzte Turniere</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let turnier of turniere" class="col-1-4">
+  <a *ngFor="let turnier of turniere" class="col-1-4" routerLink="/turnier/{{turnier.id}}">
     <div class="module turnier">
       <h4>{{turnier.name}}</h4>
     </div>

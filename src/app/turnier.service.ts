@@ -15,9 +15,15 @@ export class TurnierService {
 
   getTurniere(): Observable<Turnier[]> {
     // Todo: send the message _after_ fetching the heroes
-    this.messageService.add('HeroService: fetched heroes');
+    this.messageService.add('TurnierService: fetched turniere');
 
     return of(TURNIERE);
+  }
+
+  getTurnier(id: number): Observable<Turnier> {
+    // Todo: send the message _after_ fetching the hero
+    this.messageService.add(`TurnierService: fetched turnier id=${id}`);
+    return of(TURNIERE.find(turnier => turnier.id === id));
   }
 
 }

@@ -10,17 +10,12 @@ import {TurnierService} from '../turnier.service';
 export class TurnierComponent implements OnInit {
 
   turniere: Turnier[];
-  selectedTurnier: Turnier;
 
   constructor(private turnierService: TurnierService) {
   }
 
   getTurniere(): void {
     this.turnierService.getTurniere().subscribe(t => this.turniere = t);
-  }
-
-  onSelect(turnier: Turnier): void {
-    this.selectedTurnier = turnier;
   }
 
   ngOnInit() {
