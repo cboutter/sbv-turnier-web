@@ -29,4 +29,8 @@ export class TurnierDetailComponent implements OnInit {
       .subscribe(t => this.turnier = t);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
 }
