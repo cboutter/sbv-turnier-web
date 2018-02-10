@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import {TurnierComponent} from './turnier/turnier.component';
 import {TurnierDetailComponent} from './turnier-detail/turnier-detail.component';
+import {TurnierService} from './turnier.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import {TurnierDetailComponent} from './turnier-detail/turnier-detail.component'
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [TurnierService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

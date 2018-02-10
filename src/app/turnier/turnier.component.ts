@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Turnier} from './turnier';
-import {TURNIERE} from '../mock-turniere';
+import {TurnierService} from '../turnier.service';
 
 @Component({
   selector: 'app-turnier',
@@ -9,10 +9,14 @@ import {TURNIERE} from '../mock-turniere';
 })
 export class TurnierComponent implements OnInit {
 
-  turniere = TURNIERE;
+  turniere: Turnier[];
   selectedTurnier: Turnier;
 
-  constructor() {
+  constructor(private turnierService: TurnierService) {
+  }
+
+  getTurniere(): void {
+    this.turniere = this.turnierService.getTurniere();
   }
 
   onSelect(turnier: Turnier): void {
@@ -20,6 +24,7 @@ export class TurnierComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getTurniere();
   }
 
 }
