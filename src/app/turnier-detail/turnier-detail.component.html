@@ -1,0 +1,9 @@
+<div *ngIf="turnier">
+  <h2>{{ turnier.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{turnier.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="turnier.name" placeholder="name">
+    </label>
+  </div>
+</div>

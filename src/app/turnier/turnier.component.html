@@ -6,13 +6,5 @@
     <span class="badge">{{turnier.id}}</span> {{turnier.name}}
   </li>
 </ul>
-<div *ngIf="selectedTurnier">
-  <h2>{{ selectedTurnier.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedTurnier.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedTurnier.name" placeholder="name">
-    </label>
-  </div>
-</div>
+<app-turnier-detail [turnier]="selectedTurnier"></app-turnier-detail>
 
