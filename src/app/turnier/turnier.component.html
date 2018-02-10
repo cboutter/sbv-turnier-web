@@ -1,6 +1,8 @@
 <h2>Letzte Turniere</h2>
 <ul class="turniere">
-  <li *ngFor="let turnier of turniere" (click)="onSelect(turnier)">
+  <li *ngFor="let turnier of turniere"
+      [class.selected]="turnier === selectedTurnier"
+      (click)="onSelect(turnier)">
     <span class="badge">{{turnier.id}}</span> {{turnier.name}}
   </li>
 </ul>
