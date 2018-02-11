@@ -1,29 +1,42 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
 
 import {MessageService} from './message.service';
 import {Turnier} from './turnier/turnier';
-import {TURNIERE} from './mock-turniere';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class TurnierService {
 
-  constructor(private messageService: MessageService) {
+  private turniereUrl = 'http://localhost:8080/turnier';
+
+  constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
   getTurniere(): Observable<Turnier[]> {
     // Todo: send the message _after_ fetching the heroes
-    this.messageService.add('TurnierService: fetched turniere');
+    this.log('fetched turniere');
+    console.log('fetched turniere');
 
-    return of(TURNIERE);
+    return this.http.get<Turnier[]>(this.turniereUrl)
+      .do(res => console.log('HTTP response:', res));
   }
 
   getTurnier(id: number): Observable<Turnier> {
     // Todo: send the message _after_ fetching the hero
-    this.messageService.add(`TurnierService: fetched turnier id=${id}`);
-    return of(TURNIERE.find(turnier => turnier.id === id));
+    this.log(`fetched turnier id=${id}`);
+    console.log(`fetched turnier id=${id}`);
+    return this.http.get<Turnier>(`${this.turniereUrl}/${id}`)
+      .do(res => console.log('HTTP response:', res));
+  }
+
+  /** Log a TurnierService message with the MessageService */
+  private log(message: string) {
+    this.messageService.add('TurnierService: ' + message);
   }
 
 }
