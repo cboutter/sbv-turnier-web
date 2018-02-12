@@ -6,5 +6,19 @@
       <input [(ngModel)]="turnier.name" placeholder="name">
     </label>
   </div>
+  <div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="startDate" placeholder="Start Datum" [(ngModel)]="turnier.startDate">
+      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+      <mat-datepicker #startDate></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="endDate" placeholder="Ende Datum" [(ngModel)]="turnier.endDate">
+      <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+      <mat-datepicker #endDate></mat-datepicker>
+    </mat-form-field>
+  </div>
 </div>
 <button (click)="goBack()">go back</button>
