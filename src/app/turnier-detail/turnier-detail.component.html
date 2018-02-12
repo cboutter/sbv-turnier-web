@@ -20,5 +20,12 @@
       <mat-datepicker #endDate></mat-datepicker>
     </mat-form-field>
   </div>
+  <div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="regEndDate" placeholder="Meldeschluss" [(ngModel)]="turnier.registerEndDate">
+      <mat-datepicker-toggle matSuffix [for]="regEndDate"></mat-datepicker-toggle>
+      <mat-datepicker #regEndDate></mat-datepicker>
+    </mat-form-field>
+  </div>
 </div>
 <button (click)="goBack()">go back</button>
