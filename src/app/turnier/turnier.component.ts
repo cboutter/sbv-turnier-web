@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Turnier} from './turnier';
 import {TurnierService} from '../turnier.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-turnier',
@@ -22,4 +23,16 @@ export class TurnierComponent implements OnInit {
     this.getTurniere();
   }
 
+  createNew(): void {
+    const newTurnier = new Turnier(-1, 'Platzhalter', null, null, null);
+    this.turnierService.save(newTurnier).subscribe(
+      data => {
+        console.log(`created turnier ${data}`);
+        this.getTurniere();
+      },
+      error => {
+        console.error('Error creating Turnier!');
+        return Observable.throw(error);
+      });
+  }
 }
