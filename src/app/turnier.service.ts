@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable} from 'rxjs/Observable';
 
@@ -11,6 +11,12 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TurnierService {
+
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   private turniereUrl = 'http://localhost:8080/turnier';
 
@@ -39,4 +45,11 @@ export class TurnierService {
     this.messageService.add('TurnierService: ' + message);
   }
 
+  save(turnier: Turnier): Observable<Turnier> {
+    this.log('saved turnier');
+    const turnierJson = JSON.stringify(turnier);
+    console.log(`saving turnier ${turnierJson}`);
+    return this.http.post<Turnier>(this.turniereUrl, turnier, this.httpOptions)
+      .do(res => console.log('HTTP response:', res));
+  }
 }

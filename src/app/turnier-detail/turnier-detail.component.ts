@@ -33,4 +33,8 @@ export class TurnierDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.turnierService.save(this.turnier).subscribe(t => this.turnier = t);
+  }
+
 }
