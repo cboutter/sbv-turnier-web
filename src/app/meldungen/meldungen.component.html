@@ -1,0 +1,9 @@
+<div>
+  <mat-form-field>
+    <mat-select placeholder="Disziplin">
+      <mat-option *ngFor="let key of keys" [value]="key">
+        {{ disziplinen[key] }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

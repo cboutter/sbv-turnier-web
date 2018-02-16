@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {
+  MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule,
+  MatSelectModule
+} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +17,8 @@ import {MessagesComponent} from './messages/messages.component';
 import {MessageService} from './message.service';
 import {AppRoutingModule} from './/app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {MeldungenComponent} from './meldungen/meldungen.component';
+import {MeldungenService} from './meldungen.service';
 
 
 @NgModule({
@@ -22,7 +27,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     TurnierComponent,
     TurnierDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    MeldungenComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +39,10 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatInputModule
   ],
-  providers: [TurnierService, MessageService],
+  providers: [TurnierService, MessageService, MeldungenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

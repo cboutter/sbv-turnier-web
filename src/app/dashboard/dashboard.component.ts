@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getTurniere(): void {
     this.turnierService.getTurniere()
-      .subscribe(t => this.turniere = t.slice(1, 5));
+      .subscribe(t => this.turniere = t.slice(0, 3));
   }
 }
