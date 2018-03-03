@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Disziplin} from "../meldungen/disziplin";
 
 @Component({
   selector: 'app-rangliste',
@@ -7,7 +8,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RanglisteComponent implements OnInit {
 
+  disziplin: Disziplin;
+
   constructor() {
+    this.disziplin = Disziplin.DE;
   }
 
   ngOnInit() {
