@@ -19,6 +19,7 @@ import {AppRoutingModule} from './/app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {MeldungenComponent} from './meldungen/meldungen.component';
 import {MeldungenService} from './meldungen.service';
+import {RanglisteComponent} from './rangliste/rangliste.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MeldungenService} from './meldungen.service';
     TurnierDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    MeldungenComponent
+    MeldungenComponent,
+    RanglisteComponent
   ],
   imports: [
     BrowserModule,
