@@ -7,6 +7,7 @@ import {MessageService} from './message.service';
 import {Turnier} from './turnier/turnier';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
+import {environment} from "../environments/environment";
 
 
 @Injectable()
@@ -18,7 +19,7 @@ export class TurnierService {
     })
   };
 
-  private turniereUrl = 'http://localhost:8080/turnier';
+  private turniereUrl = `${environment.apiUrl}/turnier`;
 
   constructor(private http: HttpClient, private messageService: MessageService) {
   }

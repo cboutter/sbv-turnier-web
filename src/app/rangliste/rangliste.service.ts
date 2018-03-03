@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {MessageService} from "../message.service";
 import {Observable} from "rxjs/Observable";
 import {Ranglisteneintrag} from "./ranglisteneintrag";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class RanglisteService {
@@ -14,7 +15,7 @@ export class RanglisteService {
     })
   };
 
-  private ranglisteUrl = 'http://localhost:8080/rangliste';
+  private ranglisteUrl = `${environment.apiUrl}/rangliste`;
 
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
