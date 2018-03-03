@@ -5,7 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule,
-  MatSelectModule
+  MatSelectModule, MatTableModule
 } from '@angular/material';
 
 
@@ -20,6 +20,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {MeldungenComponent} from './meldungen/meldungen.component';
 import {MeldungenService} from './meldungen.service';
 import {RanglisteComponent} from './rangliste/rangliste.component';
+import {RanglisteService} from "./rangliste/rangliste.service";
 
 
 @NgModule({
@@ -42,9 +43,10 @@ import {RanglisteComponent} from './rangliste/rangliste.component';
     MatNativeDateModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
-  providers: [TurnierService, MessageService, MeldungenService],
+  providers: [TurnierService, RanglisteService, MessageService, MeldungenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

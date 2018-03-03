@@ -1,3 +1,4 @@
+<div>
 <mat-form-field>
   <mat-select [(value)]="disziplin">
     <mat-option value="DE">DE</mat-option>
@@ -7,3 +8,72 @@
     <mat-option value="MIXED">Mixed</mat-option>
   </mat-select>
 </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="datasource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef>Platz</mat-header-cell>
+      <mat-cell *matCellDef="let element; let i = index"> {{i + 1}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.spieler.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="vorname">
+      <mat-header-cell *matHeaderCellDef>Vorname</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.spieler.vorname}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="club">
+      <mat-header-cell *matHeaderCellDef>Verein</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.spieler.clubname}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="placement1">
+      <mat-header-cell *matHeaderCellDef>Platzierung 1</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.platzierung1}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="placement2">
+      <mat-header-cell *matHeaderCellDef>Platzierung 2</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.platzierung2}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="placement3">
+      <mat-header-cell *matHeaderCellDef>Platzierung 3</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.platzierung3}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="points1">
+      <mat-header-cell *matHeaderCellDef>Punkte 1</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.punkte1}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="points2">
+      <mat-header-cell *matHeaderCellDef>Punkte 2</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.punkte2}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="points3">
+      <mat-header-cell *matHeaderCellDef>Punkte 3</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.punkte3}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="points_overall">
+      <mat-header-cell *matHeaderCellDef>Punkte Gesamt</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.punkteGesamt}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
