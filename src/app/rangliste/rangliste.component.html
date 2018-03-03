@@ -1,6 +1,6 @@
 <div>
 <mat-form-field>
-  <mat-select [(value)]="disziplin">
+  <mat-select [ngModel]="disziplin" (ngModelChange)="onChange($event)">
     <mat-option value="DE">DE</mat-option>
     <mat-option value="HE">HE</mat-option>
     <mat-option value="DD">DD</mat-option>
