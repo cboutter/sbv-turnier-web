@@ -2,6 +2,7 @@
 <h1>
   {{ title }}
 </h1>
+<div *ngIf="admin; else elseBlock">
 <nav>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/turniere">Turniere</a>
@@ -9,3 +10,8 @@
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+</div>
+<ng-template #elseBlock>
+  <app-rangliste></app-rangliste>
+</ng-template>
+
