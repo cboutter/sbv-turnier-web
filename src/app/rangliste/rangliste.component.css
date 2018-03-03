@@ -1,0 +1,66 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 800px;
+}
+
+.mat-table {
+  overflow: auto;
+}
+
+.mat-column-position {
+  flex: 0 0 50px;
+  font-weight: bold;
+}
+
+.mat-column-placement1 {
+  flex: 0 0 50px;
+}
+
+.mat-column-placement2 {
+  flex: 0 0 50px;
+}
+
+.mat-column-placement3 {
+  flex: 0 0 50px;
+}
+
+.mat-column-points1 {
+  flex: 0 0 75px;
+}
+
+.mat-column-points2 {
+  flex: 0 0 75px;
+}
+
+.mat-column-points3 {
+  flex: 0 0 75px;
+}
+
+.mat-column-points_overall {
+  flex: 0 0 75px;
+  font-weight: bold;
+}
+
+.mat-column-name {
+  justify-content: flex-start;
+}
+
+.mat-column-vorname {
+  justify-content: flex-start;
+}
+
+mat-header-cell {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+mat-cell {
+  display: flex;
+  justify-content: center;
+}
+
+mat-row:nth-child(odd) {
+  background-color: lightgrey;
+}
