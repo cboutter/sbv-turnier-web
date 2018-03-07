@@ -21,6 +21,7 @@ import {MeldungenComponent} from './meldungen/meldungen.component';
 import {MeldungenService} from './meldungen.service';
 import {RanglisteComponent} from './rangliste/rangliste.component';
 import {RanglisteService} from "./rangliste/rangliste.service";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {RanglisteService} from "./rangliste/rangliste.service";
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
