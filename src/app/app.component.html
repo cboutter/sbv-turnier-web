@@ -4,9 +4,9 @@
 </h1>
 <div *ngIf="admin; else elseBlock">
 <nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/turniere">Turniere</a>
-  <a routerLink="/rangliste">Rangliste</a>
+  <a routerLink="/dashboard" queryParamsHandling="merge">Dashboard</a>
+  <a routerLink="/turniere" queryParamsHandling="merge">Turniere</a>
+  <a routerLink="/rangliste" queryParamsHandling="merge">Rangliste</a>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
